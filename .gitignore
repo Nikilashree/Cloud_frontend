@@ -1,2 +1,3 @@
-nodemodules/
 dist/
+node_modules/
+.env
