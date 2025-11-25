@@ -7,7 +7,7 @@ export default function AuthPage() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
-  const API_BASE = "https://campusparkingbackend.azurewebsites.net/";
+  const API_BASE = "https://campusparkingbackend.azurewebsites.net";
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });

@@ -24,7 +24,7 @@ export default function Dashboard() {
   const [chatLoading, setChatLoading] = useState(false);
   const chatRef = useRef(null);
 
-  const API_BASE = "https://campusparkingbackend.azurewebsites.net/";
+  const API_BASE = "https://campusparkingbackend.azurewebsites.net";
 
   async function fetchSlots() {
     const res = await fetch(`${API_BASE}/slots`);

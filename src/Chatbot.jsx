@@ -10,7 +10,7 @@ export default function Chatbot() {
 
   // Use Vite env variables in the browser; Vite exposes variables via import.meta.env
   // Ensure your env var is prefixed with VITE_ (for example VITE_BACKEND_URL)
-  const BACKEND_URL = "http://localhost:8080/chat";
+  const BACKEND_URL = "https://campusparkingbackend.azurewebsites.net/chat";
 
   async function sendMessage(e) {
     e?.preventDefault();
