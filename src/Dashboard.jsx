@@ -343,7 +343,7 @@ export default function Dashboard() {
               </thead>
               <tbody>
                 {bookings.map((b, index) => {
-                  const qrData = `https://campusparkingbackend.azurewebsites.net//admin?slot_no=${
+                  const qrData = `https://calm-flower-04db14500.3.azurestaticapps.net/admin?slot_no=${
                     b.slot_no
                   }&name=${encodeURIComponent(
                     user.name
