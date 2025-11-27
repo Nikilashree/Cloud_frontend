@@ -21,6 +21,7 @@ export default function Chatbot() {
     setText("");
 
     try {
+      console.log("Sending message to:", BACKEND_URL);
       const resp = await fetch(BACKEND_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -30,14 +31,18 @@ export default function Chatbot() {
         }),
       });
 
+      if (!resp.ok) {
+        throw new Error(`Server returned ${resp.status}: ${resp.statusText}`);
+      }
+
       const data = await resp.json();
       const botText = data?.reply || "No reply from server.";
       setMessages((m) => [...m, { role: "bot", text: botText }]);
     } catch (err) {
-      console.error("Error:", err);
+      console.error("Chat error:", err);
       setMessages((m) => [
         ...m,
-        { role: "bot", text: "Error contacting server." },
+        { role: "bot", text: `Error: ${err.message}` },
       ]);
     }
   }
