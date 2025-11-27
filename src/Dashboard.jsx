@@ -104,7 +104,7 @@ export default function Dashboard() {
     setChatLoading(true);
 
     try {
-      const resp = await fetch("http://localhost:8080/chat", {
+      const resp = await fetch("https://campusparkingbackend.azurewebsites.net/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: trimmed, email: user.email }),
